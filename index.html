@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SimmCo — Strategy. Studio. Culture.</title>
+  <meta name="description" content="SimmCo is a strategic innovation firm building systems, platforms and experiences that create economic and community impact." />
+  <style>
+    :root{
+      --ink:#050505;
+      --paper:#f4f4ef;
+      --white:#fff;
+      --sage:#b8c8c5;
+      --sage2:#8da7a2;
+      --sage3:#dfe7e4;
+      --muted:#77756f;
+      --line:rgba(5,5,5,.17);
+      --max:1510px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;line-height:1.08;overflow-x:hidden}
+    a{color:inherit;text-decoration:none}
+    img,video{display:block;max-width:100%}
+    .wrap{width:min(var(--max),calc(100% - 56px));margin:auto}
+    .micro{font-size:10px;line-height:1.2;text-transform:uppercase;letter-spacing:.17em;font-weight:800}
+
+    /* NAV */
+    .nav{position:fixed;inset:0 0 auto 0;z-index:100;color:#fff;mix-blend-mode:difference}
+    .nav-inner{height:74px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{font-weight:950;letter-spacing:-.07em;font-size:30px;white-space:nowrap}.brand i{font-style:normal;color:var(--sage)}
+    .nav-links{display:flex;align-items:center;gap:25px;font-size:10px;font-weight:900;letter-spacing:.14em;text-transform:uppercase}
+    .nav-links .build{border:1px solid currentColor;border-radius:999px;padding:10px 14px}
+
+    /* HERO */
+    .hero{position:relative;min-height:100svh;background:#050505;color:#fff;overflow:hidden;border-bottom:1px solid #111}
+    .hero-media{position:absolute;inset:0;overflow:hidden;background:#070707}
+    .hero-scene{position:absolute;inset:0;opacity:0;animation:sceneCycle 21s linear infinite;will-change:opacity,transform}
+    .hero-scene img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.22) brightness(.62);transform:scale(1.045);animation:sceneDrift 4.2s ease-out infinite alternate}
+    .hero-scene:nth-child(1){animation-delay:0s}
+    .hero-scene:nth-child(2){animation-delay:3s}
+    .hero-scene:nth-child(3){animation-delay:6s}
+    .hero-scene:nth-child(4){animation-delay:9s}
+    .hero-scene:nth-child(5){animation-delay:12s}
+    .hero-scene:nth-child(6){animation-delay:15s}
+    .hero-scene:nth-child(7){animation-delay:18s}
+    @keyframes sceneCycle{0%{opacity:0}2%,12%{opacity:1}14%,100%{opacity:0}}
+    @keyframes sceneDrift{from{transform:scale(1.045) translate3d(0,0,0)}to{transform:scale(1.105) translate3d(-1.2%,.6%,0)}}
+    .scene-stage img{object-position:center 42%}.scene-sport img{object-position:center 28%}.scene-place img{object-position:center 48%}.scene-summit img{object-position:center 30%}.scene-stronger img{object-position:center 36%}
+    .studio-flash{display:grid;place-items:center;background:radial-gradient(circle at 70% 20%,rgba(184,200,197,.22),transparent 32%),#080909}
+    .studio-flash:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(184,200,197,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(184,200,197,.09) 1px,transparent 1px);background-size:48px 48px;transform:perspective(620px) rotateX(58deg) scale(1.5);transform-origin:center 72%;opacity:.44}
+    .studio-mini{position:relative;width:min(760px,68vw);height:min(390px,46vh);border:1px solid rgba(255,255,255,.42);background:rgba(7,8,8,.86);box-shadow:0 0 0 1px rgba(184,200,197,.08),0 30px 80px rgba(0,0,0,.55);display:grid;grid-template-columns:145px 1fr;overflow:hidden;transform:rotate(-3deg) translateX(8vw)}
+    .studio-mini .rail{border-right:1px solid rgba(255,255,255,.15);padding:22px 14px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:#b8c8c5}
+    .studio-mini .rail b{display:block;color:#fff;font-size:16px;letter-spacing:-.04em;margin-bottom:30px}.studio-mini .rail span{display:block;border-top:1px solid rgba(255,255,255,.13);padding:12px 0}
+    .studio-mini .panel{padding:28px}.studio-mini .panel small{font-size:9px;text-transform:uppercase;letter-spacing:.14em;color:#9fb2ae}.studio-mini .panel h4{font-size:clamp(27px,3vw,48px);letter-spacing:-.055em;margin:8px 0 28px}.studio-mini .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.studio-mini .metrics div{border:1px solid rgba(255,255,255,.15);padding:16px}.studio-mini .metrics b{font-size:28px;display:block}.studio-mini .metrics span{font-size:8px;text-transform:uppercase;letter-spacing:.1em;color:#9fb2ae}.studio-mini .linechart{height:110px;margin-top:18px;border:1px solid rgba(255,255,255,.13);position:relative;overflow:hidden}.studio-mini .linechart:before{content:"";position:absolute;left:4%;right:3%;bottom:20%;height:3px;background:linear-gradient(100deg,transparent 0 4%,#b8c8c5 4% 16%,transparent 16% 18%,#b8c8c5 18% 35%,transparent 35% 38%,#b8c8c5 38% 58%,transparent 58% 60%,#b8c8c5 60% 82%,transparent 82% 84%,#b8c8c5 84%);transform:skewY(-8deg)}
+    .hero-media:before{content:"";position:absolute;inset:0;z-index:20;background:linear-gradient(90deg,rgba(0,0,0,.80) 0%,rgba(0,0,0,.37) 48%,rgba(0,0,0,.48) 100%),linear-gradient(180deg,rgba(0,0,0,.18),rgba(0,0,0,.50));pointer-events:none}
+    .hero-media:after{content:"";position:absolute;inset:0;z-index:21;pointer-events:none;opacity:.13;background-image:repeating-linear-gradient(0deg,rgba(255,255,255,.12) 0,rgba(255,255,255,.12) 1px,transparent 1px,transparent 3px);mix-blend-mode:overlay}
+    .hero-beats{position:absolute;inset:0;z-index:5;pointer-events:none;overflow:hidden}
+    .hero-beats span{position:absolute;right:3vw;top:25vh;font-weight:950;font-size:clamp(82px,14vw,230px);letter-spacing:-.085em;line-height:.76;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.29);opacity:0;animation:beatHit 21s linear infinite}
+    .hero-beats span:nth-child(1){animation-delay:0s}.hero-beats span:nth-child(2){animation-delay:3s}.hero-beats span:nth-child(3){animation-delay:6s}.hero-beats span:nth-child(4){animation-delay:9s}.hero-beats span:nth-child(5){animation-delay:12s}.hero-beats span:nth-child(6){animation-delay:15s}.hero-beats span:nth-child(7){animation-delay:18s}
+    @keyframes beatHit{0%{opacity:0;transform:translateY(36px) scale(.95)}2%,8%{opacity:.72;transform:translateY(0) scale(1)}11%{opacity:0;transform:translateY(-20px) scale(1.02)}100%{opacity:0}}
+    .hero-frame{position:absolute;inset:89px 28px 28px;border:1px solid rgba(255,255,255,.34);z-index:4;pointer-events:none}
+    .hero-frame:before,.hero-frame:after{content:"";position:absolute;background:var(--sage)}
+    .hero-frame:before{width:54px;height:5px;top:-3px;left:11%}
+    .hero-frame:after{height:54px;width:5px;right:-3px;bottom:16%}
+    .hero-content{position:relative;z-index:6;min-height:100svh;display:grid;grid-template-rows:1fr auto;padding:132px 0 38px}
+    .hero-kicker{display:flex;justify-content:space-between;gap:20px;align-items:flex-start;margin-bottom:32px}
+    .hero-kicker span:first-child{color:var(--sage)}
+    h1{font-size:clamp(74px,10.6vw,172px);line-height:.78;letter-spacing:-.087em;margin:0;max-width:1340px;text-transform:uppercase;font-weight:950}
+    h1 .ghost{display:block;color:transparent;-webkit-text-stroke:1px rgba(255,255,255,.7)}
+    h1 .sage{color:var(--sage)}
+    .word-reel{height:24px;overflow:hidden;margin-top:25px;font-size:13px;text-transform:uppercase;letter-spacing:.17em;font-weight:900;color:var(--sage)}
+    .word-reel-inner{animation:wordCycle 10.4s steps(1,end) infinite}
+    .word-reel-inner span{height:24px;display:block}
+    @keyframes wordCycle{0%,24%{transform:translateY(0)}25%,49%{transform:translateY(-24px)}50%,74%{transform:translateY(-48px)}75%,100%{transform:translateY(-72px)}}
+    .hero-lower{display:grid;grid-template-columns:1.1fr .9fr;gap:80px;align-items:end;border-top:1px solid rgba(255,255,255,.45);padding-top:22px}
+    .hero-dek{font-size:clamp(20px,2vw,31px);max-width:860px;letter-spacing:-.03em;line-height:1.08}
+    .hero-dek b{color:var(--sage)}
+    .hero-index{display:grid;gap:8px;justify-self:end;min-width:min(430px,100%)}
+    .hero-index div{display:grid;grid-template-columns:40px 1fr auto;gap:12px;border-top:1px solid rgba(255,255,255,.42);padding:10px 0;font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:850}
+    .hero-index strong{color:var(--sage)}
+    .scroll-note{position:absolute;right:39px;top:50%;transform:translateY(-50%) rotate(90deg);transform-origin:center;font-size:9px;letter-spacing:.17em;text-transform:uppercase;font-weight:900;z-index:7;color:rgba(255,255,255,.7)}
+
+    /* TICKER */
+    .ticker{background:var(--sage);color:var(--ink);overflow:hidden;border-bottom:1px solid var(--ink)}
+    .ticker-track{width:max-content;display:flex;align-items:center;gap:27px;padding:15px 0;animation:ticker 28s linear infinite;font-size:12px;font-weight:950;letter-spacing:.13em;text-transform:uppercase}
+    .ticker-track span:after{content:"✦";margin-left:27px}
+    @keyframes ticker{to{transform:translateX(-50%)}}
+
+    /* GENERAL */
+    section{border-bottom:1px solid var(--line)}
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .8s ease,transform .8s ease}.reveal.show{opacity:1;transform:none}
+    .section-head{display:grid;grid-template-columns:185px 1fr;gap:44px;padding:110px 0 58px}
+    .eyebrow{font-size:10px;letter-spacing:.16em;text-transform:uppercase;font-weight:900;color:#66817c;padding-top:6px}
+    .section-title{font-size:clamp(50px,6.9vw,103px);line-height:.88;letter-spacing:-.068em;margin:0;max-width:1210px;font-weight:930}
+    .section-dek{font-family:Georgia,"Times New Roman",serif;font-size:clamp(21px,2vw,31px);line-height:1.28;max-width:820px;color:#4f4e49;margin:28px 0 0}
+
+    /* MANIFESTO */
+    .manifesto{padding:120px 0 110px;display:grid;grid-template-columns:.74fr 1.26fr;gap:100px;align-items:start}
+    .manifesto .left{position:sticky;top:110px}.manifesto .left div{border-top:1px solid var(--ink);padding:12px 0;display:flex;justify-content:space-between;font-size:10px;text-transform:uppercase;letter-spacing:.13em;font-weight:900}
+    .manifesto h2{font-size:clamp(54px,7.4vw,112px);line-height:.88;letter-spacing:-.068em;margin:0;font-weight:930}.manifesto h2 em{font-family:Georgia,serif;font-weight:400;color:var(--sage2)}
+    .manifesto p{font-size:18px;line-height:1.45;max-width:760px;color:#55534d;margin:34px 0 0}
+
+    /* PILLARS */
+    .pillars{border-top:1px solid var(--ink)}
+    .pillar-row{display:grid;grid-template-columns:130px 1fr .84fr;gap:38px;min-height:405px;padding:38px 0;border-bottom:1px solid var(--line);align-items:center;position:relative;overflow:hidden}
+    .pillar-row:last-child{border-bottom:0}.pillar-num{align-self:start;font-size:11px;letter-spacing:.13em;font-weight:900;color:#5d7772}
+    .pillar-row h3{font-size:clamp(66px,8vw,130px);letter-spacing:-.078em;line-height:.8;margin:0;font-weight:950;text-transform:uppercase}.pillar-row h3 small{display:block;font-family:Georgia,serif;font-style:italic;text-transform:none;font-size:.29em;font-weight:400;letter-spacing:-.03em;margin-top:20px;color:var(--sage2)}
+    .pillar-copy{font-size:16px;line-height:1.45;max-width:520px}.pillar-copy p{margin:0 0 28px;color:#595750}.tags{display:flex;flex-wrap:wrap;gap:7px}.tag{border:1px solid currentColor;border-radius:99px;padding:8px 10px;font-size:9px;letter-spacing:.1em;text-transform:uppercase;font-weight:850}
+    .pillar-row.strategy:after{content:"";position:absolute;width:440px;height:440px;border:1px solid rgba(5,5,5,.14);border-radius:50%;right:-160px;top:-40px;box-shadow:0 0 0 70px rgba(184,200,197,.11),0 0 0 140px rgba(184,200,197,.06)}
+
+    /* STRATEGY VISUAL */
+    .strategy-visual{background:#fff;padding:0 0 110px}.strategy-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+    .system-map{min-height:490px;position:relative;border:1px solid var(--line);background-image:linear-gradient(rgba(5,5,5,.06) 1px,transparent 1px),linear-gradient(90deg,rgba(5,5,5,.06) 1px,transparent 1px);background-size:38px 38px;overflow:hidden}
+    .node{position:absolute;width:108px;height:108px;border:1px solid var(--ink);border-radius:50%;display:grid;place-items:center;text-align:center;font-size:9px;letter-spacing:.09em;text-transform:uppercase;font-weight:900;background:var(--paper)}
+    .node.core{width:145px;height:145px;left:42%;top:35%;background:var(--sage);font-size:11px}.node.n1{left:9%;top:12%}.node.n2{right:9%;top:11%}.node.n3{left:12%;bottom:8%}.node.n4{right:11%;bottom:10%}.line{position:absolute;height:1px;background:var(--ink);transform-origin:left center;opacity:.45}.l1{width:260px;left:19%;top:32%;transform:rotate(19deg)}.l2{width:240px;left:55%;top:44%;transform:rotate(-19deg)}.l3{width:265px;left:20%;top:66%;transform:rotate(-18deg)}.l4{width:255px;left:55%;top:59%;transform:rotate(18deg)}
+    .strategy-copy h4{font-size:clamp(39px,4.2vw,65px);letter-spacing:-.055em;line-height:.95;margin:0 0 22px}.strategy-copy p{font-size:18px;line-height:1.48;color:#5f5d57;max-width:650px}.strategy-copy .quote{font-family:Georgia,serif;font-size:28px;line-height:1.25;color:var(--ink);border-left:5px solid var(--sage);padding-left:20px;margin-top:36px}
+
+    /* STUDIO */
+    .studio{background:#050505;color:#fff;position:relative;overflow:hidden}.studio .section-head{padding-bottom:38px}.studio .eyebrow{color:var(--sage)}.studio .section-dek{color:#c8cfcd}
+    .studio:after{content:"STUDIO";position:absolute;right:-80px;top:100px;font-size:27vw;font-weight:950;letter-spacing:-.09em;color:rgba(255,255,255,.025);pointer-events:none}
+    .studio-grid{display:grid;grid-template-columns:.74fr 1.26fr;gap:75px;align-items:center;padding:0 0 118px;position:relative;z-index:2}
+    .studio-list{display:grid;gap:0}.studio-list div{border-top:1px solid rgba(255,255,255,.25);padding:15px 0;display:grid;grid-template-columns:42px 1fr auto;gap:14px;font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:850}.studio-list div:last-child{border-bottom:1px solid rgba(255,255,255,.25)}.studio-list b{color:var(--sage)}
+    .device{background:#eef1ef;color:#0b0b0b;border-radius:22px;padding:12px;box-shadow:0 35px 100px rgba(0,0,0,.45);transform:perspective(1000px) rotateY(-5deg) rotateX(2deg);transition:.5s ease}.device:hover{transform:none}
+    .device-top{height:35px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #cdd4d1;padding:0 8px;font-size:9px;text-transform:uppercase;letter-spacing:.1em;font-weight:850;color:#5f6765}.dots{display:flex;gap:5px}.dots i{width:7px;height:7px;border-radius:50%;background:#adb5b2}
+    .ui{display:grid;grid-template-columns:170px 1fr;min-height:440px}.sidebar{background:#101413;color:#fff;border-radius:12px;margin:10px 8px 10px 0;padding:18px 13px}.sidebar b{font-size:19px;letter-spacing:-.04em}.sidebar span{display:block;margin-top:12px;padding:9px;border-radius:8px;background:rgba(255,255,255,.055);font-size:9px;color:#ccd6d2}.dashboard{padding:20px 16px}.dash-kicker{font-size:9px;text-transform:uppercase;letter-spacing:.13em;color:#63736f;font-weight:900}.dash-title{font-size:32px;font-weight:930;letter-spacing:-.05em;margin:4px 0 20px}.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.metric{background:#fff;border:1px solid #d8dedb;border-radius:9px;padding:13px}.metric b{font-size:26px}.metric span{display:block;color:#777;font-size:9px;margin-top:6px}.chart{height:170px;border:1px solid #d8dedb;border-radius:9px;margin-top:10px;background:linear-gradient(180deg,#e6eeeb,#fff);position:relative;overflow:hidden}.chart svg{position:absolute;inset:0;width:100%;height:100%}.prototype-note{font-size:8px;letter-spacing:.1em;text-transform:uppercase;color:#75807e;margin-top:10px}
+
+    /* CULTURE */
+    .culture{background:#0b0b0b;color:#fff}.culture .eyebrow{color:var(--sage)}.culture .section-dek{color:#c7c7c3}
+    .culture-lead{display:grid;grid-template-columns:1.25fr .75fr;gap:16px;padding-bottom:16px}.culture-tile{position:relative;overflow:hidden;background:#222;min-height:690px}.culture-tile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08);transition:filter .45s ease,transform .7s ease}.culture-tile:hover img{filter:grayscale(.2) contrast(1.05);transform:scale(1.035)}.culture-tile:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 20%,rgba(0,0,0,.88))}.culture-copy{position:absolute;left:28px;right:28px;bottom:28px;z-index:3}.culture-copy .micro{color:var(--sage)}.culture-copy h3{font-size:clamp(52px,6vw,92px);letter-spacing:-.07em;line-height:.85;margin:9px 0 13px}.culture-copy p{font-size:14px;line-height:1.42;color:#d7d7d4;max-width:650px;margin:0}
+    .culture-side{display:grid;grid-template-rows:1fr 1fr;gap:16px}.culture-side .culture-tile{min-height:337px}.culture-side .culture-copy h3{font-size:44px}
+    .culture-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding-bottom:116px}.strip-card{min-height:300px;border:1px solid rgba(255,255,255,.25);padding:22px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.strip-card.sage{background:var(--sage);color:var(--ink);border-color:var(--sage)}.strip-card h4{font-size:38px;line-height:.92;letter-spacing:-.05em;margin:0}.strip-card p{font-size:12px;line-height:1.42;max-width:390px}.strip-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1);opacity:.74}.strip-card:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.15),rgba(0,0,0,.9))}.strip-card .on-img{position:relative;z-index:2}
+
+    /* WORK */
+    .work{background:var(--paper)}
+    .work-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px;padding-bottom:120px}.work-card{min-height:380px;border:1px solid var(--line);padding:22px;position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;background:#fff}.work-card:hover .arrow{transform:translate(5px,-5px)}.work-card .arrow{position:absolute;right:22px;top:20px;font-size:27px;transition:.2s ease}.work-card .label{font-size:9px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;color:#58736e}.work-card h3{font-size:clamp(34px,3.4vw,58px);line-height:.92;letter-spacing:-.058em;margin:0 0 11px}.work-card p{font-size:13px;line-height:1.4;color:#64625d;max-width:470px;margin:0}.work-card.image{color:#fff;border:0}.work-card.image img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.08);transition:.5s ease}.work-card.image:hover img{filter:grayscale(.1);transform:scale(1.02)}.work-card.image:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.86))}.work-card.image>*:not(img){position:relative;z-index:2}.work-card.image p{color:#e3e3e1}.work-card.image .label{color:var(--sage)}
+    .c7{grid-column:span 7}.c5{grid-column:span 5}.c4{grid-column:span 4}.c8{grid-column:span 8}.sage-card{background:var(--sage);border-color:var(--sage)}.black-card{background:#050505;color:#fff;border-color:#050505}.black-card p{color:#ccc}.black-card .label{color:var(--sage)}
+
+    /* STRONGER PLATFORM */
+    .stronger-platform{background:#fff}.stronger-wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:75px;padding:110px 0;align-items:center}.stronger-wrap h2{font-size:clamp(50px,6vw,90px);line-height:.9;letter-spacing:-.065em;margin:0 0 24px}.stronger-wrap .intro{font-family:Georgia,serif;font-size:25px;line-height:1.3;color:#4e4c47;max-width:650px}.platform-chain{margin-top:40px;display:flex;flex-wrap:wrap;align-items:center;gap:9px;font-size:10px;text-transform:uppercase;letter-spacing:.11em;font-weight:900}.platform-chain span{border:1px solid var(--ink);border-radius:999px;padding:9px 11px}.platform-chain b{color:var(--sage2)}
+    .stronger-visual{display:grid;grid-template-columns:1.15fr .85fr;gap:14px}.stronger-img{min-height:535px;position:relative;overflow:hidden}.stronger-img img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;filter:grayscale(1) contrast(1.07)}.stronger-img:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 35%,rgba(0,0,0,.76))}.stronger-img div{position:absolute;z-index:2;left:20px;bottom:20px;color:#fff}.stronger-img b{font-size:27px;letter-spacing:-.04em}.stronger-img small{display:block;color:var(--sage);margin-bottom:7px;text-transform:uppercase;letter-spacing:.1em;font-weight:900}.fund-card{background:var(--sage);min-height:535px;padding:24px;display:flex;flex-direction:column;justify-content:space-between}.fund-card .big{font-size:58px;line-height:.88;letter-spacing:-.065em;font-weight:950}.fund-card p{font-size:14px;line-height:1.45}.fund-card .ring{width:170px;height:170px;border:2px solid var(--ink);border-radius:50%;align-self:flex-end;position:relative}.fund-card .ring:after{content:"+";position:absolute;inset:0;display:grid;place-items:center;font-size:70px;font-weight:200}
+
+    /* CLIENTS */
+    .clients{padding:112px 0}.clients h2{font-size:clamp(54px,7.2vw,108px);line-height:.84;letter-spacing:-.07em;margin:0 0 55px;max-width:1260px}.client-rows{border-top:1px solid var(--ink)}.client-row{display:grid;grid-template-columns:90px 1fr auto;gap:20px;align-items:center;padding:19px 0;border-bottom:1px solid var(--ink);font-size:clamp(26px,3.2vw,48px);font-weight:900;letter-spacing:-.04em;transition:.2s ease}.client-row:hover{padding-left:14px;background:var(--sage3)}.client-row span:first-child{font-size:10px;letter-spacing:.11em;color:#5e7a75}.client-row small{font-size:10px;text-transform:uppercase;letter-spacing:.12em;font-weight:850}
+
+    /* METHOD */
+    .method{background:#050505;color:#fff}.method .eyebrow{color:var(--sage)}.method-grid{display:grid;grid-template-columns:repeat(5,1fr);padding-bottom:108px}.method-step{min-height:275px;border-top:1px solid rgba(255,255,255,.45);border-right:1px solid rgba(255,255,255,.17);padding:20px 18px;display:flex;flex-direction:column;justify-content:space-between}.method-step:last-child{border-right:0}.method-step b{font-size:10px;letter-spacing:.12em;color:var(--sage)}.method-step h4{font-size:34px;letter-spacing:-.05em;margin:0 0 11px}.method-step p{font-size:11px;line-height:1.42;color:#aaa;max-width:190px}
+
+    /* ABOUT + CTA */
+    .about{padding:105px 0;display:grid;grid-template-columns:1.2fr .8fr;gap:90px}.about h2{font-size:clamp(52px,6.4vw,95px);line-height:.9;letter-spacing:-.065em;margin:0}.about p{font-size:17px;line-height:1.48;color:#55524d;margin:0 0 20px}.heritage{margin-top:35px;border-top:1px solid var(--line);padding-top:20px;display:grid;grid-template-columns:160px 1fr;gap:18px;align-items:center}.heritage img{width:160px}.heritage small{font-size:10px;line-height:1.45;color:#666}
+    .cta{background:var(--sage);border-bottom:0}.cta-inner{min-height:560px;padding:82px 0;display:flex;flex-direction:column;justify-content:space-between}.cta h2{font-size:clamp(70px,10vw,155px);line-height:.78;letter-spacing:-.083em;margin:0;max-width:1240px}.cta-row{display:flex;justify-content:space-between;align-items:end;gap:30px}.cta-row p{font-family:Georgia,serif;font-size:25px;max-width:680px;line-height:1.27}.cta-button{display:inline-flex;border:2px solid var(--ink);border-radius:999px;padding:16px 20px;font-size:11px;text-transform:uppercase;letter-spacing:.12em;font-weight:900;transition:.2s ease}.cta-button:hover{background:var(--ink);color:#fff}
+    footer{background:#050505;color:#fff}.footer{padding:26px 0;display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:9px;letter-spacing:.11em;text-transform:uppercase}.footer strong{font-size:18px;letter-spacing:-.05em}
+
+    @media(max-width:980px){
+      .nav-links a:not(.build){display:none}.wrap{width:min(var(--max),calc(100% - 32px))}.hero-frame{inset:78px 16px 16px}.hero-content{padding-top:112px}.hero-lower,.manifesto,.strategy-grid,.studio-grid,.stronger-wrap,.about{grid-template-columns:1fr;gap:44px}.hero-index{justify-self:start}.section-head{grid-template-columns:1fr;gap:14px;padding-top:80px}.pillar-row{grid-template-columns:60px 1fr;gap:20px}.pillar-copy{grid-column:2}.culture-lead{grid-template-columns:1fr}.culture-side{grid-template-columns:1fr 1fr;grid-template-rows:none}.culture-side .culture-tile{min-height:360px}.culture-strip{grid-template-columns:1fr}.work-grid{grid-template-columns:1fr}.c7,.c5,.c4,.c8{grid-column:auto}.method-grid{grid-template-columns:1fr 1fr}.client-row{grid-template-columns:50px 1fr}.client-row small{display:none}.stronger-visual{grid-template-columns:1fr 1fr}.manifesto .left{position:static}.scroll-note{display:none}}
+    @media(max-width:660px){
+      h1{font-size:clamp(62px,19vw,100px)}.hero-lower{gap:35px}.hero-dek{font-size:19px}.hero-index{min-width:0;width:100%}.hero-index div{grid-template-columns:30px 1fr}.hero-index div span:last-child{display:none}.section-title{font-size:54px}.pillar-row{grid-template-columns:1fr;padding:29px 0}.pillar-num,.pillar-copy{grid-column:auto}.pillar-row h3{font-size:66px}.strategy-visual{padding-bottom:80px}.system-map{min-height:370px}.node{width:78px;height:78px;font-size:7px}.node.core{width:110px;height:110px}.studio-grid{padding-bottom:80px}.ui{grid-template-columns:100px 1fr;min-height:380px}.sidebar{padding:13px 8px}.cards{grid-template-columns:1fr}.metric:nth-child(2),.metric:nth-child(3){display:none}.culture-tile{min-height:560px}.culture-side{grid-template-columns:1fr}.culture-side .culture-tile{min-height:330px}.stronger-visual{grid-template-columns:1fr}.stronger-img,.fund-card{min-height:390px}.method-grid{grid-template-columns:1fr}.method-step{min-height:190px;border-right:0}.about{padding:78px 0}.heritage{grid-template-columns:1fr}.cta-inner{min-height:500px}.cta-row{align-items:flex-start;flex-direction:column}.footer{align-items:flex-start;flex-direction:column}}
+    @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}.reveal{opacity:1;transform:none}.hero-scene{display:none}.hero-scene:first-child{display:block;opacity:1}.hero-beats{display:none}}
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">SIMMCO<i>.</i></a>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#work">Work</a><a href="#strategy">Strategy</a><a href="#studio">Studio</a><a href="#culture">Culture</a><a href="#about">About</a><a class="build" href="#contact">Build With Us ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-media" aria-hidden="true">
+        <div class="hero-scene scene-crowd"><img src="assets/hero-juneteenth.jpg" alt=""></div>
+        <div class="hero-scene scene-summit"><img src="assets/hero-summit.jpg" alt=""></div>
+        <div class="hero-scene scene-stage"><img src="assets/rock-city-live.jpg" alt=""></div>
+        <div class="hero-scene studio-flash">
+          <div class="studio-mini">
+            <div class="rail"><b>ESOS</b><span>Overview</span><span>Scholars</span><span>Programs</span><span>Insights</span></div>
+            <div class="panel"><small>SimmCo Studio / Product Build</small><h4>Student Success Overview</h4><div class="metrics"><div><b>412</b><span>Active scholars</span></div><div><b>87%</b><span>Engagement</span></div><div><b>24</b><span>Interventions</span></div></div><div class="linechart"></div></div>
+          </div>
+        </div>
+        <div class="hero-scene scene-sport"><img src="assets/hero-moses.jpg" alt=""></div>
+        <div class="hero-scene scene-place"><img src="assets/hero-place.jpg" alt=""></div>
+        <div class="hero-scene scene-stronger"><img src="assets/stronger-armstrong.png" alt=""></div>
+        <div class="hero-beats"><span>People</span><span>Ideas</span><span>Stages</span><span>Build</span><span>Culture</span><span>Place</span><span>Impact</span></div>
+      </div>
+      <div class="hero-frame"></div>
+      <div class="scroll-note">Scroll to explore →</div>
+      <div class="wrap hero-content">
+        <div>
+          <div class="hero-kicker micro"><span>Strategic Innovation Firm</span><span>Little Rock → Working Nationally</span></div>
+          <h1><span>We Build</span><span class="ghost">What Communities</span><span class="sage">Need Next.</span></h1>
+          <div class="word-reel" aria-hidden="true"><div class="word-reel-inner"><span>People.</span><span>Place.</span><span>Technology.</span><span>Culture.</span></div></div>
+        </div>
+        <div class="hero-lower">
+          <div class="hero-dek">SimmCo builds <b>systems, platforms and experiences</b> at the intersection of strategy, technology and culture.</div>
+          <div class="hero-index">
+            <div><strong>01</strong><span>Strategy</span><span>Design the system</span></div>
+            <div><strong>02</strong><span>SimmCo Studio</span><span>Build the tools</span></div>
+            <div><strong>03</strong><span>Culture</span><span>Move the people</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="ticker" aria-label="SimmCo capabilities"><div class="ticker-track">
+      <span>Strategy</span><span>Technology</span><span>Culture</span><span>Economic Development</span><span>Sports</span><span>Media</span><span>Entrepreneurship</span><span>Place</span><span>Impact</span><span>Strategy</span><span>Technology</span><span>Culture</span><span>Economic Development</span><span>Sports</span><span>Media</span><span>Entrepreneurship</span><span>Place</span><span>Impact</span>
+    </div></div>
+
+    <section>
+      <div class="wrap manifesto reveal">
+        <div class="left">
+          <div><span>One firm</span><span>01</span></div><div><span>Three disciplines</span><span>03</span></div><div><span>One outcome</span><span>Impact</span></div>
+        </div>
+        <div><h2>Ideas are easy. <em>Infrastructure</em> changes things.</h2><p>We work where the opportunity is real, the stakeholders are diverse and the path forward is not obvious. SimmCo connects strategy, technology, culture, partnerships and execution to move ambitious ideas from concept to operating reality.</p></div>
+      </div>
+    </section>
+
+    <section class="pillars">
+      <div class="wrap">
+        <article class="pillar-row strategy reveal"><div class="pillar-num">01 / STRATEGY</div><h3>Design<br>The System.<small>See the whole board.</small></h3><div class="pillar-copy"><p>Ecosystem strategy, place-based innovation and institutional problem-solving designed to align people, assets, capital and opportunity.</p><div class="tags"><span class="tag">Ecosystems</span><span class="tag">Economic Development</span><span class="tag">Place</span><span class="tag">Partnerships</span><span class="tag">Research + Measurement</span></div></div></article>
+        <article class="pillar-row reveal"><div class="pillar-num">02 / STUDIO</div><h3>Build<br>The Tools.<small>Turn strategy into product.</small></h3><div class="pillar-copy"><p>SimmCo Studio designs and builds digital platforms, MVPs, AI-enabled tools, data systems and digital experiences that make strategy usable.</p><div class="tags"><span class="tag">Digital Products</span><span class="tag">AI + Automation</span><span class="tag">MVPs</span><span class="tag">Data Systems</span><span class="tag">Experience Design</span></div></div></article>
+        <article class="pillar-row reveal"><div class="pillar-num">03 / CULTURE</div><h3>Move<br>The People.<small>Build participation and momentum.</small></h3><div class="pillar-copy"><p>We build cultural platforms, live experiences, media and community moments that create identity, participation, influence and economic activity.</p><div class="tags"><span class="tag">Live Experiences</span><span class="tag">Media</span><span class="tag">Sports</span><span class="tag">Cultural Platforms</span><span class="tag">Brand Partnerships</span></div></div></article>
+      </div>
+    </section>
+
+    <section id="strategy" class="strategy-visual">
+      <div class="wrap section-head reveal"><div class="eyebrow">01 / Strategy</div><div><h2 class="section-title">Make the invisible system visible.</h2><p class="section-dek">Great strategy is not a report. It is a shared operating picture that people can act on.</p></div></div>
+      <div class="wrap strategy-grid reveal">
+        <div class="system-map" aria-label="Illustrative ecosystem map"><div class="line l1"></div><div class="line l2"></div><div class="line l3"></div><div class="line l4"></div><div class="node n1">People</div><div class="node n2">Capital</div><div class="node core">Opportunity</div><div class="node n3">Place</div><div class="node n4">Institutions</div></div>
+        <div class="strategy-copy"><h4>We architect the conditions for coordinated growth.</h4><p>From entrepreneurship ecosystems and cultural districts to institutional initiatives and regional positioning, SimmCo helps leaders understand what they have, what is missing, and what to build next.</p><div class="quote">“Connect people, place, capital, culture and institutions — then turn alignment into action.”</div></div>
+      </div>
+    </section>
+
+    <section id="studio" class="studio">
+      <div class="wrap section-head reveal"><div class="eyebrow">02 / SimmCo Studio</div><div><h2 class="section-title">Strategy should become something people can use.</h2><p class="section-dek">Studio is where ideas become platforms, products, workflows and digital infrastructure.</p></div></div>
+      <div class="wrap studio-grid reveal">
+        <div class="studio-list"><div><b>01</b><span>Product Strategy</span><span>→</span></div><div><b>02</b><span>Digital Platforms</span><span>→</span></div><div><b>03</b><span>AI + Automation</span><span>→</span></div><div><b>04</b><span>Data + Dashboards</span><span>→</span></div><div><b>05</b><span>MVP Development</span><span>→</span></div><div><b>06</b><span>Digital Experience</span><span>→</span></div></div>
+        <div class="device" aria-label="Illustrative ESOS product interface"><div class="device-top"><div class="dots"><i></i><i></i><i></i></div><span>ESOS / Product Build</span></div><div class="ui"><aside class="sidebar"><b>ESOS</b><span>Overview</span><span>Students</span><span>Interventions</span><span>Programs</span><span>Analytics</span></aside><div class="dashboard"><div class="dash-kicker">Emerging Scholars Operating System</div><div class="dash-title">Student Success Overview</div><div class="cards"><div class="metric"><b>412</b><span>Active scholars</span></div><div class="metric"><b>87%</b><span>Engagement</span></div><div class="metric"><b>24</b><span>Open interventions</span></div></div><div class="chart"><svg viewBox="0 0 500 170" preserveAspectRatio="none"><polyline points="20,132 92,118 158,126 222,82 295,97 360,52 478,64" fill="none" stroke="#77928d" stroke-width="4"/><line x1="0" y1="140" x2="500" y2="140" stroke="#c5cecb"/></svg></div><div class="prototype-note">Illustrative interface — final project screens can replace this visual.</div></div></div></div>
+      </div>
+    </section>
+
+    <section id="culture" class="culture">
+      <div class="wrap section-head reveal"><div class="eyebrow">03 / Culture</div><div><h2 class="section-title">Move The People.</h2><p class="section-dek">Culture is how people gather, identify, participate and move. We build platforms that turn attention into belonging — and belonging into momentum.</p></div></div>
+      <div class="wrap culture-lead">
+        <article class="culture-tile reveal"><img src="assets/juneteenth.jpg" alt="Juneteenth in Da Rock creative"><div class="culture-copy"><div class="micro">Flagship Platform / Strategy + Culture</div><h3>Juneteenth in Da Rock</h3><p>A city-scale cultural platform spanning entrepreneurship, arts, music, tourism, community, wellness and economic activity.</p></div></article>
+        <div class="culture-side"><article class="culture-tile reveal"><img src="assets/rock-city-live.jpg" alt="Rock City Live creative"><div class="culture-copy"><div class="micro">Entertainment IP</div><h3>Rock City Live</h3><p>Music, city identity, major weekends, sponsorship and audience.</p></div></article><article class="culture-tile reveal"><img src="assets/black-expo.png" alt="MidSouth Black Expo creative"><div class="culture-copy"><div class="micro">Community Platform</div><h3>Black Expo</h3><p>Health, enterprise, culture and community engagement at scale.</p></div></article></div>
+      </div>
+      <div class="wrap culture-strip">
+        <article class="strip-card sage reveal"><div class="micro">Sports + Culture</div><div><h4>Motivate One × Moses Moody</h4><p>Turn visibility into infrastructure — youth opportunity, community experiences, partnerships and sponsor engagement that outlive the moment.</p></div></article>
+        <article class="strip-card reveal"><img src="assets/stronger-armstrong.png" alt="Stronger with Armstrong"><div class="on-img micro">Media + Leadership</div><div class="on-img"><h4>Stronger with Armstrong</h4><p>A statewide storytelling and leadership platform across broadcast, streaming, partnerships and live engagement.</p></div></article>
+        <article class="strip-card sage reveal"><div class="micro">Platform → Impact</div><div><h4>Stronger Futures Fund</h4><p>Extending the platform from conversation into a durable vehicle for community investment, partnerships and opportunity.</p></div></article>
+      </div>
+    </section>
+
+    <section id="work" class="work">
+      <div class="wrap section-head reveal"><div class="eyebrow">Selected Work</div><div><h2 class="section-title">Proof of range. One point of view.</h2><p class="section-dek">The work looks different because the problems are different. The SimmCo approach stays consistent: understand the system, build the platform, move people, measure what changes.</p></div></div>
+      <div class="wrap work-grid">
+        <article class="work-card image c7 reveal"><img src="assets/juneteenth.jpg" alt="Juneteenth in Da Rock"><div class="label">Strategy + Culture</div><div><h3>Juneteenth in Da Rock</h3><p>From event production to regional cultural and economic platform.</p></div><span class="arrow">↗</span></article>
+        <article class="work-card black-card c5 reveal"><div class="label">Studio + Strategy</div><div><h3>ESOS</h3><p>Designing the operating system behind student success and institutional coordination.</p></div><span class="arrow">↗</span></article>
+        <article class="work-card sage-card c4 reveal"><div class="label">Strategy + Place</div><div><h3>Made In / Historic West Ninth</h3><p>Connecting cultural heritage, enterprise, innovation, capital and destination-making.</p></div><span class="arrow">↗</span></article>
+        <article class="work-card image c4 reveal"><img src="assets/rock-city-live.jpg" alt="Rock City Live"><div class="label">Culture + Media</div><div><h3>Rock City Live</h3><p>Live entertainment IP designed for audience, partners and city identity.</p></div><span class="arrow">↗</span></article>
+        <article class="work-card c4 reveal"><div class="label">Strategy + Ecosystems</div><div><h3>Startup Cincy + Startup NWA</h3><p>Founder, capital and institutional infrastructure around local opportunity.</p></div><span class="arrow">↗</span></article>
+        <article class="work-card c5 reveal"><div class="label">Venture + Founder Support</div><div><h3>Venture Noire + MBX</h3><p>Programs, partnerships and founder pathways that expand access to entrepreneurship and capital.</p></div><span class="arrow">↗</span></article>
+        <article class="work-card image c7 reveal"><img src="assets/black-expo.png" alt="MidSouth Black Expo"><div class="label">Culture + Health + Enterprise</div><div><h3>MidSouth Black Expo</h3><p>Repositioning a legacy expo into a broader platform for health, enterprise and community engagement.</p></div><span class="arrow">↗</span></article>
+      </div>
+    </section>
+
+    <section class="stronger-platform">
+      <div class="wrap stronger-wrap reveal">
+        <div><div class="eyebrow">Platform Thinking</div><h2>Content is the beginning. Infrastructure is the point.</h2><p class="intro">Stronger shows how SimmCo thinks beyond a single deliverable: build the audience, tell the story, convene the community, then create a mechanism for durable impact.</p><div class="platform-chain"><span>Media</span><b>→</b><span>Community</span><b>→</b><span>Capital</span><b>→</b><span>Impact</span></div></div>
+        <div class="stronger-visual"><div class="stronger-img"><img src="assets/stronger-armstrong.png" alt="Stronger with Armstrong on Arkansas TV"><div><small>Audience + Storytelling</small><b>Stronger with Armstrong</b></div></div><div class="fund-card"><div class="micro">Capital + Opportunity</div><div class="ring"></div><div><div class="big">Stronger Futures Fund</div><p>A future-facing vehicle designed to move from conversation into investment, partnership and stronger outcomes for communities.</p></div></div></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap clients reveal"><div class="eyebrow">Who We Build With</div><h2>Different rooms. Same expectation: make something move.</h2><div class="client-rows"><div class="client-row"><span>01</span><div>Cities + Regions</div><small>Place / Growth / Opportunity</small></div><div class="client-row"><span>02</span><div>Universities + Institutions</div><small>Systems / Platforms / Students</small></div><div class="client-row"><span>03</span><div>Foundations + Philanthropy</div><small>Impact / Community / Capital</small></div><div class="client-row"><span>04</span><div>Corporations + Brands</div><small>Partnership / Culture / Activation</small></div><div class="client-row"><span>05</span><div>Athletes + Creators</div><small>Platform / Legacy / Community</small></div><div class="client-row"><span>06</span><div>Entrepreneurs + Ecosystem Builders</div><small>Venture / Infrastructure / Growth</small></div></div></div>
+    </section>
+
+    <section class="method">
+      <div class="wrap section-head reveal"><div class="eyebrow">The SimmCo Method</div><div><h2 class="section-title">From disconnected assets to coordinated momentum.</h2></div></div>
+      <div class="wrap method-grid"><article class="method-step reveal"><b>01</b><div><h4>Connect</h4><p>Map the people, assets and relationships that matter.</p></div></article><article class="method-step reveal"><b>02</b><div><h4>Capitalize</h4><p>Align resources, revenue, partnerships and opportunity.</p></div></article><article class="method-step reveal"><b>03</b><div><h4>Activate</h4><p>Turn strategy into visible, usable action.</p></div></article><article class="method-step reveal"><b>04</b><div><h4>Measure</h4><p>Build evidence around what is changing and why.</p></div></article><article class="method-step reveal"><b>05</b><div><h4>Position</h4><p>Tell the story in a way that attracts the next layer of growth.</p></div></article></div>
+    </section>
+
+    <section id="about">
+      <div class="wrap about reveal"><h2>Built from creative roots. Evolved for bigger systems.</h2><div><p>SimmCo is a strategic innovation firm founded by Bjorn K. Simmons. The firm connects people, place, capital, culture and institutions to create economic opportunity.</p><p>The company grew out of a creative and marketing foundation. That DNA still matters: strategy without imagination is incomplete, and creative without a system rarely scales. SimmCo brings both together.</p><div class="heritage"><img src="assets/simmco-legacy-logo.jpg" alt="Original Simmons & Company identity"><small>The original Simmons & Company identity remains part of the firm's heritage. The sage palette carries forward as a signature accent while the primary SimmCo identity becomes bolder, more flexible and more institutional.</small></div></div></div>
+    </section>
+
+    <section class="cta" id="contact"><div class="wrap cta-inner"><h2>Let's build<br>what's next.</h2><div class="cta-row"><p>Bring us the ambitious idea, the complicated system, the platform that needs to exist, or the cultural moment that deserves to become something bigger.</p><a class="cta-button" href="mailto:hello@simmco.co">Start a conversation ↗</a></div></div></section>
+  </main>
+
+  <footer><div class="wrap footer"><strong>SIMMCO.</strong><span>Strategy. Studio. Culture.</span><span>© 2026 Simmons & Company</span></div></footer>
+
+  <script>
+    const observer = new IntersectionObserver(entries => entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('show'); }), {threshold:.08});
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
